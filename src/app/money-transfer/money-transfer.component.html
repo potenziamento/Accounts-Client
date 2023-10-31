@@ -1,1 +1,48 @@
-<p>money-transfer works!</p>
+<div class="transfer-container">
+    <h2>Trasferimento di denaro</h2>
+  
+    <form (ngSubmit)="submitTransfer()">
+      <div>
+        <label>Nome del creditore:</label>
+        <input type="text" [(ngModel)]="transferData.creditorName" name="creditorName" required>
+      </div>
+  
+      <div>
+        <label>Codice conto creditore:</label>
+        <input type="text" [(ngModel)]="transferData.creditorAccountCode" name="creditorAccountCode" required>
+      </div>
+  
+      <div>
+        <label>Descrizione:</label>
+        <input type="text" [(ngModel)]="transferData.description" name="description" required>
+      </div>
+  
+      <div>
+        <label>Valuta:</label>
+        <select [(ngModel)]="transferData.currency" name="currency">
+          <option value="EUR">EUR</option>
+        </select>
+      </div>
+  
+      <div>
+        <label>Importo:</label>
+        <input type="number" [(ngModel)]="transferData.amount" name="amount" required>
+      </div>
+  
+      <div>
+        <label>Data di esecuzione:</label>
+        <input type="date" [(ngModel)]="transferData.executionDate" name="executionDate" required>
+      </div>
+  
+      <button type="submit">Invia</button>
+    </form>
+  
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+  
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+  
