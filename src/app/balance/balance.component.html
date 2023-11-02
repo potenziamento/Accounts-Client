@@ -1,11 +1,11 @@
-<div class="balance-container">
-    <h2>Saldo del tuo account</h2>
-  
-    <div *ngIf="balance !== null" class="balance-value">
-        Saldo: {{ balance }} {{ currency === 'EUR' ? '€' : currency }}
-    </div>
-  
-    <div *ngIf="error" class="error-message">
-      {{ error }}
-    </div>
-  </div>
+<mat-card class="balance-container">
+  <mat-card-title>Saldo del tuo account</mat-card-title>
+  <mat-card-content>
+      <div *ngIf="balance !== null" class="balance-value">
+          Saldo: {{ balance }} {{ currency === 'EUR' ? '€' : currency }}
+      </div>
+      <div *ngIf="error" class="error-message">
+          {{ error }}
+      </div>
+  </mat-card-content>
+</mat-card>
