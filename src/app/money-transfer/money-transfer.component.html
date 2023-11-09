@@ -3,12 +3,12 @@
   
     <form (ngSubmit)="submitTransfer()">
       <div>
-        <label>Nome del creditore:</label>
+        <label>Nome del beneficiario:</label>
         <input type="text" [(ngModel)]="transferData.creditorName" name="creditorName" required>
       </div>
   
       <div>
-        <label>Codice conto creditore:</label>
+        <label>IBAN beneficiario:</label>
         <input type="text" [(ngModel)]="transferData.creditorAccountCode" name="creditorAccountCode" required>
       </div>
   

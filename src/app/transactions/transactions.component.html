@@ -1,23 +1,25 @@
-<div class="transactions-container">
-    <h2>Transazioni del tuo account</h2>
-  
-    <div class="date-filters">
-      <label>
-        Da: <input type="date" [(ngModel)]="fromDate">
-      </label>
-      <label>
-        A: <input type="date" [(ngModel)]="toDate">
-      </label>
-      <button (click)="getTransactions()">Aggiorna</button>
+<mat-card>
+  <mat-card-title class="titolo-sezione">Lista movimenti</mat-card-title>
+    <mat-card-content>
+    <div style="text-align: center;">
+      <mat-form-field>
+      <mat-label>Seleziona intervallo di date</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Da" [(ngModel)]="fromDate" (dateChange)="getTransactions()">
+        <input matEndDate placeholder="A" [(ngModel)]="toDate" (dateChange)="getTransactions()">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
     </div>
   
     <div *ngIf="transactions.length > 0" class="transactions-list">
       <table>
         <thead>
           <tr>
-            <th>Data</th>
+            <th class ="colonnelaterali">Data</th>
             <th>Descrizione</th>
-            <th>Importo</th>
+            <th class ="colonnelaterali">Importo</th>
           </tr>
         </thead>
         <tbody>
@@ -33,5 +35,6 @@
     <div *ngIf="error" class="error-message">
       {{ error }}
     </div>
-  </div>
+  </mat-card-content>
+  </mat-card>
   
