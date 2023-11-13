@@ -13,6 +13,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 
@@ -32,6 +37,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatCardModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    MatSnackBarModule,
+    MatInputModule,
+    MatProgressBarModule,
+    MatSelectModule,
     MatFormFieldModule
   ],
   providers: [],

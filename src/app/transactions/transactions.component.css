@@ -23,3 +23,9 @@
 .colonnelaterali {
   width: 20%;
 }
+.mat-form-field {
+  width: 100%;
+}
+.mat-input-element {
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -31,7 +31,12 @@
   
       <div>
         <label>Data di esecuzione:</label>
-        <input type="date" [(ngModel)]="transferData.executionDate" name="executionDate" required>
+        <mat-form-field>
+          <mat-label>Seleziona la data</mat-label>
+          <input matInput [matDatepicker]="executionDatePicker" [(ngModel)]="transferData.executionDate" name="executionDate" required>
+          <mat-datepicker-toggle matSuffix [for]="executionDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #executionDatePicker></mat-datepicker>
+        </mat-form-field>
       </div>
   
       <button type="submit">Invia</button>
